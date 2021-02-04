@@ -15,7 +15,7 @@ namespace Shop.Data.Models {
 
         public string Img { set; get; }
 
-        public ushort Price { set; get; }
+        public uint Price { set; get; }
 
         public bool IsFavourite { set; get; }
 

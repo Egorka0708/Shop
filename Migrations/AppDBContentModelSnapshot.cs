@@ -21,134 +21,144 @@ namespace Shop.Migrations
 
             modelBuilder.Entity("Shop.Data.Models.Car", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<bool>("available")
+                    b.Property<bool>("Available")
                         .HasColumnType("bit");
 
-                    b.Property<int>("categoryID")
+                    b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
-                    b.Property<string>("img")
+                    b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isFavourite")
+                    b.Property<bool>("IsFavourite")
                         .HasColumnType("bit");
 
-                    b.Property<string>("longDesc")
+                    b.Property<string>("LongDesc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("price")
-                        .HasColumnType("int");
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
 
-                    b.Property<string>("shortDesc")
+                    b.Property<string>("ShortDesc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("categoryID");
+                    b.HasIndex("CategoryID");
 
                     b.ToTable("Car");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Category", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("categoryName")
+                    b.Property<string>("CategoryName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("desc")
+                    b.Property<string>("Desc")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Category");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Order", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("adress")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasMaxLength(35)
+                        .HasColumnType("nvarchar(35)");
 
-                    b.Property<string>("email")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
-                    b.Property<DateTime>("orderTime")
+                    b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("phone")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
-                    b.Property<string>("surrName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("SurrName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Order");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("carID")
+                    b.Property<int>("CarID")
                         .HasColumnType("int");
 
-                    b.Property<int>("orderID")
+                    b.Property<int>("OrderID")
                         .HasColumnType("int");
 
-                    b.Property<long>("price")
+                    b.Property<long>("Price")
                         .HasColumnType("bigint");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("carID");
+                    b.HasIndex("CarID");
 
-                    b.HasIndex("orderID");
+                    b.HasIndex("OrderID");
 
                     b.ToTable("OrderDetail");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.ShopCartItem", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int?>("CarId")
+                        .HasColumnType("int");
+
+                    b.Property<long>("Price")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("ShopCartId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("carid")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int>("price")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("carid");
+                    b.HasIndex("CarId");
 
                     b.ToTable("ShopCartItem");
                 });
@@ -156,8 +166,8 @@ namespace Shop.Migrations
             modelBuilder.Entity("Shop.Data.Models.Car", b =>
                 {
                     b.HasOne("Shop.Data.Models.Category", "Category")
-                        .WithMany("cars")
-                        .HasForeignKey("categoryID")
+                        .WithMany("Cars")
+                        .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -166,40 +176,40 @@ namespace Shop.Migrations
 
             modelBuilder.Entity("Shop.Data.Models.OrderDetail", b =>
                 {
-                    b.HasOne("Shop.Data.Models.Car", "car")
+                    b.HasOne("Shop.Data.Models.Car", "Car")
                         .WithMany()
-                        .HasForeignKey("carID")
+                        .HasForeignKey("CarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Shop.Data.Models.Order", "order")
-                        .WithMany("orderDetails")
-                        .HasForeignKey("orderID")
+                    b.HasOne("Shop.Data.Models.Order", "Order")
+                        .WithMany("OrderDetail")
+                        .HasForeignKey("OrderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("car");
+                    b.Navigation("Car");
 
-                    b.Navigation("order");
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.ShopCartItem", b =>
                 {
-                    b.HasOne("Shop.Data.Models.Car", "car")
+                    b.HasOne("Shop.Data.Models.Car", "Car")
                         .WithMany()
-                        .HasForeignKey("carid");
+                        .HasForeignKey("CarId");
 
-                    b.Navigation("car");
+                    b.Navigation("Car");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Category", b =>
                 {
-                    b.Navigation("cars");
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("Shop.Data.Models.Order", b =>
                 {
-                    b.Navigation("orderDetails");
+                    b.Navigation("OrderDetail");
                 });
 #pragma warning restore 612, 618
         }

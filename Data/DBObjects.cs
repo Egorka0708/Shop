@@ -23,7 +23,7 @@ namespace Shop.Data {
                         ShortDesc = "Быстрый автомобиль",
                         LongDesc = "Красивый, быстрый и очень тихий автомобиль компании Tesla",
                         Img = "/img/tesla.jpg",
-                        Price = 45000,
+                        Price = 40000,
                         IsFavourite = true,
                         Available = true,
                         Category = Categories["Электромобили"]
@@ -33,7 +33,7 @@ namespace Shop.Data {
                         ShortDesc = "Тихий и спокойный",
                         LongDesc = "Удобный автомобиль для городской жизни",
                         Img = "/img/ford.jpg",
-                        Price = 11000,
+                        Price = 25000,
                         IsFavourite = false,
                         Available = true,
                         Category = Categories["Классические автомобили"]
@@ -43,8 +43,8 @@ namespace Shop.Data {
                         ShortDesc = "Дерзкий и стильный",
                         LongDesc = "Удобный и вместительный автомобиль",
                         Img = "/img/bmw.jpg",
-                        Price = 65000,
-                        IsFavourite = true,
+                        Price = 45000,
+                        IsFavourite = false,
                         Available = true,
                         Category = Categories["Классические автомобили"]
                     },
@@ -53,7 +53,7 @@ namespace Shop.Data {
                         ShortDesc = "Уютный и большой",
                         LongDesc = "Красивый и привлекательный автомобиль",
                         Img = "/img/mercedes.jpg",
-                        Price = 40000,
+                        Price = 55000,
                         IsFavourite = false,
                         Available = false,
                         Category = Categories["Классические автомобили"]
@@ -63,8 +63,58 @@ namespace Shop.Data {
                         ShortDesc = "Бесшумный и экономный",
                         LongDesc = "Классический красивый автомобиль",
                         Img = "/img/nissan.jpg",
-                        Price = 15000,
+                        Price = 20000,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Электромобили"]
+                    },
+                    new Car {
+                        Name = "Audi R8",
+                        ShortDesc = "Быстрый и резкий",
+                        LongDesc = "Спортивный и мощный автомобиль",
+                        Img = "/img/audi.jpg",
+                        Price = 28000,
                         IsFavourite = true,
+                        Available = true,
+                        Category = Categories["Классические автомобили"]
+                    },
+                    new Car {
+                        Name = "Jaguar I-PACE",
+                        ShortDesc = "Большой и комфортный",
+                        LongDesc = "Вместительный семейный автомобиль",
+                        Img = "/img/jaguar.jpg",
+                        Price = 57000,
+                        IsFavourite = false,
+                        Available = true,
+                        Category = Categories["Электромобили"]
+                    },
+                    new Car {
+                        Name = "Lamborghini Aventador",
+                        ShortDesc = "Элитный и быстрый",
+                        LongDesc = "Роскошный и стильный автомобиль",
+                        Img = "/img/lamborghini.jpg",
+                        Price = 90000,
+                        IsFavourite = false,
+                        Available = false,
+                        Category = Categories["Классические автомобили"]
+                    },
+                    new Car {
+                        Name = "Porshe 911",
+                        ShortDesc = "Спортивный и эллегантный",
+                        LongDesc = "Миниатюрный и отзывчивый автомобиль",
+                        Img = "/img/porshe.jpg",
+                        Price = 75000,
+                        IsFavourite = true,
+                        Available = false,
+                        Category = Categories["Классические автомобили"]
+                    },
+                    new Car {
+                        Name = "Volvo XC40",
+                        ShortDesc = "Семейный и вместительный",
+                        LongDesc = "Лучший автомобиль для городской жизни",
+                        Img = "/img/volvo.jpg",
+                        Price = 62000,
+                        IsFavourite = false,
                         Available = true,
                         Category = Categories["Электромобили"]
                     }
