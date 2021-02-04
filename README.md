@@ -1,4 +1,4 @@
 Лёгкий учебный проект для освоения ASP.NET и других смежных функций
 
 ## Скриншот сайта
-![Скриншот сайта](https://i.postimg.cc/2jP6mbrD/Site.png)
+![Скриншот сайта](https://i.postimg.cc/QMsF01pQ/Shop.png)
