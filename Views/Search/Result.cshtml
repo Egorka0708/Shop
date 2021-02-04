@@ -1,0 +1,8 @@
+﻿<h1>@ViewBag.Title</h1>
+<div class="row mt-5 mb-2">
+    @{ 
+        foreach (Car car in Model.AllCars) {
+            @Html.Partial("AllCars", car)
+            }
+     }
+</div>

@@ -17,6 +17,7 @@ namespace Shop.Controllers {
             _allCars = iAllCars;
             _allCategories = iCarsCategories;
         }
+
         [Route("Cars/List")]
         [Route("Cars/List/{category}")]
         public ViewResult List(string category) {

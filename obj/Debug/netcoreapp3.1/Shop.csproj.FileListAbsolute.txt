@@ -89,3 +89,4 @@ D:\Projects\C-Projects\ASP.NET\Shop\obj\Debug\netcoreapp3.1\Razor\Views\ShopCart
 D:\Projects\C-Projects\ASP.NET\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Projects\C-Projects\ASP.NET\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
 D:\Projects\C-Projects\ASP.NET\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Complete.cshtml.g.cs
+D:\Projects\C-Projects\ASP.NET\Shop\obj\Debug\netcoreapp3.1\Razor\Views\Search\Result.cshtml.g.cs
